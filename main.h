@@ -12,5 +12,6 @@ int print_char(char c, int count);
 int print_percent(void);
 int _switch(const char *, va_list, int);
 int _print_int(int num);
+int print_binary(unsigned int num);
 
 #endif /* MAIN_H */

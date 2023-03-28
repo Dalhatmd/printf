@@ -12,6 +12,7 @@ int _switch(const char *str, va_list args, int count)
 {
 	int n;
 	char c, *s;
+	unsigned int num;
 
 	switch (*str)
 	{
@@ -32,6 +33,10 @@ int _switch(const char *str, va_list args, int count)
 		case 'i':
 			n = va_arg(args, int);
 			count += _print_int(n);
+			break;
+		case 'b':
+			num = va_arg(args, unsigned int);
+			count += print_binary(num);
 			break;
 		default:
 			_putchar(*(str - 1));

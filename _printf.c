@@ -30,16 +30,16 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
                                         c = va_arg(args, int);
-                                        count = print_char(c, count);
+                                        count += print_char(c, count);
                                         break;
                                 case 's':
                                         str = va_arg(args, char *);
 					if (str == NULL)
 						str = "(nil)";
-                                        count = print_string(str, count);
+                                        count += print_string(str, count);
                                         break;
                                 case '%':
-                                        count = print_percent();
+                                        count += print_percent();
                                         break;
 				case 'd':
 				case 'i':
@@ -47,14 +47,14 @@ int _printf(const char *format, ...)
 					count = print_int(n, count);
 					break;
 				default:
-					putchar(*format);
+					_putchar(*format);
 					count++;
 					break;
 			}
 		}
 		else
 		{
-			putchar(*format);
+			_putchar(*format);
 			count++;
 		}
 		format++;

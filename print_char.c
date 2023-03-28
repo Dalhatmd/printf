@@ -9,7 +9,7 @@
 int print_char(char c, int count)
 {
 	count = 0;
-	putchar(c);
+	_putchar(c);
 	count++;
 	return (count);
 }

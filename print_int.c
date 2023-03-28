@@ -11,7 +11,7 @@ int print_int(int n, int count)
 {
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		count++;
 		n = -n;
 	}
@@ -20,7 +20,7 @@ int print_int(int n, int count)
 		count++;
 		print_int((n / 10), count);
 	}
-	putchar((n % 10) + '0');
+	_putchar((n % 10) + '0');
 	count++;
 
 	return (count);

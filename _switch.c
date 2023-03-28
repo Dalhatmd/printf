@@ -41,8 +41,11 @@ int _switch(const char *str, va_list args, int count)
 		default:
 			_putchar(*(str - 1));
 			count++;
-			_putchar(*str);
-			count++;
+			if (*str != ' ')
+			{
+				_putchar(*str);
+				count++;
+			}
 			break;
 	}
 

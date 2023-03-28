@@ -31,7 +31,7 @@ int _switch(const char *str, va_list args, int count)
 		case 'd':
 		case 'i':
 			n = va_arg(args, int);
-			count = print_int(n, count);
+			count += _print_int(n);
 			break;
 		default:
 			_putchar(*(str - 1));

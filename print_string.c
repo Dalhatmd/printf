@@ -2,7 +2,7 @@
 
 /**
  * print_string - prints a string
- *
+ * @count: Counter
  * @s: string to be printed
  *
  * Return: count of characters in string

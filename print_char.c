@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * print_char - prints a single character
- *
  * @c: character to be printed
+ * @count: Counter
  *
  * Return: 1 (success)
  */

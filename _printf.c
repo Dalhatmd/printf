@@ -9,16 +9,8 @@
  */
 int _printf(const char *format, ...)
 {
-	char *str, c;
-	int count = 0, n;
-	char *ret = "(null)";
+	int count = 0;
 	va_list args;
-
-	if(format == NULL)
-	{
-		print_string(ret, 0);
-		return (-1);
-	}
 
 	va_start(args, format);
 	while (format != NULL && *format != '\0')
@@ -26,31 +18,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			switch (*format)
-			{
-				case 'c':
-                                        c = va_arg(args, int);
-                                        count += print_char(c, count);
-                                        break;
-                                case 's':
-                                        str = va_arg(args, char *);
-					if (str == NULL)
-						str = "(nil)";
-                                        count += print_string(str, count);
-                                        break;
-                                case '%':
-                                        count += print_percent();
-                                        break;
-				case 'd':
-				case 'i':
-					n = va_arg(args, int);
-					count = print_int(n, count);
-					break;
-				default:
-					_putchar(*format);
-					count++;
-					break;
-			}
+			count = _switch(format, args, count);
 		}
 		else
 		{

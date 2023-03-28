@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stdio.h>
+int _putchar(char);
 int _printf(const char *format, ...);
 int print_string(char *s, int count);
 int print_char(char c, int count);

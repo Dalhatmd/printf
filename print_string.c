@@ -7,7 +7,7 @@
  *
  * Return: count of characters in string
  */
-int print_string(char *s)
+int print_string(char *s, count)
 {
 	int count;
 

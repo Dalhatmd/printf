@@ -6,8 +6,10 @@
  *
  * Return: 1 (success)
  */
-int print_char(char c)
+int print_char(char c, int count)
 {
+	count = 0;
 	putchar(c);
-	return (1);
+	count++;
+	return (count);
 }

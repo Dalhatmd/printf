@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
 	if(format == NULL)
 	{
-		print_string(ret);
+		print_string(ret, 0);
 		return (-1);
 	}
 
@@ -30,19 +30,16 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
                                         c = va_arg(args, int);
-                                        print_char(c);
-                                        count++;
+                                        count = print_char(c, count);
                                         break;
                                 case 's':
                                         str = va_arg(args, char *);
 					if (str == NULL)
 						str = "(nil)";
-                                        print_string(str);
-                                        count++;
+                                        count = print_string(str, count);
                                         break;
                                 case '%':
-                                        print_percent();
-                                        count++;
+                                        count = print_percent();
                                         break;
 				case 'd':
 				case 'i':

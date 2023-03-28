@@ -7,7 +7,9 @@
  */
 int print_percent(void)
 {
+	count = 0;
 	putchar ('%');
+	count++;
 
-	return (1);
+	return (count);
 }

@@ -34,6 +34,8 @@ int _switch(const char *str, va_list args, int count)
 			count = print_int(n, count);
 			break;
 		default:
+			_putchar(*(str - 1));
+			count++;
 			_putchar(*str);
 			count++;
 			break;

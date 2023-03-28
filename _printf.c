@@ -28,6 +28,8 @@ int _printf(const char *format, ...)
                                         break;
                                 case 's':
                                         str = va_arg(args, char *);
+					if (str == NULL)
+						str = "(nil)";
                                         print_string(str);
                                         count++;
                                         break;

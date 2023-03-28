@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	char *str;
+	char *str, c;
 	int count = 0, n;
 	va_list args;
 
@@ -22,20 +22,19 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 				case 'c':
-					putchar(va_arg(args, int));
-					count++;
-					break;
-				case 's':
-					str = va_arg(args, char *);
-					if (str == NULL)
-						str = "(null)";
-					while (*str != '\0')
-					{
-						putchar(*str);
-						count++;
-						str++;
-					}
-					break;
+                                        c = va_arg(args, int);
+                                        print_char(c);
+                                        count++;
+                                        break;
+                                case 's':
+                                        str = va_arg(args, char *);
+                                        print_string(str);
+                                        count++;
+                                        break;
+                                case '%':
+                                        print_percent();
+                                        count++;
+                                        break;
 				case 'd':
 				case 'i':
 					n = va_arg(args, int);

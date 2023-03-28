@@ -5,13 +5,20 @@
  * _printf - Prints the string pointed by format to stdout
  * @format: The pointer to thestring to print
  *
- * Return: Number of characters printed
+ * Return: Number of characters printed or -1 on error
  */
 int _printf(const char *format, ...)
 {
 	char *str, c;
 	int count = 0, n;
+	char *ret = "(null)";
 	va_list args;
+
+	if(format == NULL)
+	{
+		print_string(ret);
+		return (-1);
+	}
 
 	va_start(args, format);
 	while (format != NULL && *format != '\0')

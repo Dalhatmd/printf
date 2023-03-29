@@ -9,7 +9,8 @@
  */
 int print_int(va_list num, int count)
 {
-	int n = 0, i = 0, x = 0, tmp;
+	unsigned int tmp;
+	int n = 0, i = 0, x = 0;
 
 	n = va_arg(num, int);
 	if (n <= INT_MAX && n >= INT_MIN)

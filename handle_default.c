@@ -2,23 +2,26 @@
 
 /**
  * handle_default - Switch default function
- * @args: Variadic list
+ * @s: Pointer ot string
  * @count: counter
  *
  * Return: Count or -1 for error
  */
-int handle_default(va_list args, int count)
+int handle_default(const char *s, int count)
 {
-	char *s;
-
-	s = va_arg(args, char *);
-	if (*s != ' ' || *s != 0)
+	printf("S in handle default: %s\n", s);
+	if (*s != ' ')
 	{
-		_putchar(*(s - 1));
-		_putchar(*s);
-		count += 2;
-		return (count);
+		if (*s != '\0')
+		{
+			_putchar(*(s - 1));
+			_putchar(*s);
+			count += 2;
+			return (count);
+		}
+		else
+			return (-1);
 	}
 	else
-		return (-1);
+		return(-1);
 }

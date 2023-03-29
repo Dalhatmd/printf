@@ -38,7 +38,7 @@ int _switch(const char *str, va_list args, int count)
 			count += print_binary(num);
 			break;
 		default:
-			count = handle_default(args, count);
+			count = handle_default(str, count);
 			break;
 	}
 

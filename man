@@ -1,0 +1,39 @@
+NAME
+   printf - format and print data
+
+SYNOPSIS
+   printf FORMAT [ARGUMENT]...
+   printf OPTION
+
+DESCRIPTION
+   Print ARGUMENT(s) according to FORMAT, or execute
+   according to OPTION:
+
+   --help
+      display this help and exit
+
+   --version
+      output version information and exit
+
+   FORMAT controls the output as in C printf.  Interpreted
+   sequences are:
+
+   %s: format for strings
+
+   %c: format for character
+
+   %d: format for decimal
+
+   %i: format for integer
+
+   %b: format for binary
+
+   %%: format to print a percent sign
+
+   AUTHOR
+   Written by Umar Muhammad
+
+REPORTING BUGS
+   No known bugs found
+
+

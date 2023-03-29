@@ -1,14 +1,16 @@
 #include "main.h"
 /**
  * print_char - prints a single character
- * @c: character to be printed
+ * @args: Arguments in the printf call
  * @count: Counter
  *
  * Return: 1 (success)
  */
-int print_char(char c, int count)
+int print_char(va_list args, int count)
 {
-	count = 0;
+	char c;
+
+	c = va_arg(args, int);
 	_putchar(c);
 	count++;
 	return (count);

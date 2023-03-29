@@ -3,13 +3,17 @@
 /**
  * print_string - prints a string
  * @count: Counter
- * @s: string to be printed
+ * @args: string to be printed
  *
  * Return: count of characters in string
  */
-int print_string(char *s, int count)
+int print_string(va_list args, int count)
 {
-	count = 0;
+	char *s;
+
+	s = va_arg(args, char *);
+	if (s == NULL)
+		s = "(null)";
 	while (*s != '\0')
 	{
 		_putchar(*s);

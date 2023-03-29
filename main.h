@@ -8,8 +8,8 @@
 #include <stdarg.h>
 int _putchar(char);
 int _printf(const char *format, ...);
-int print_string(char *s, int count);
-int print_char(char c, int count);
+int print_string(va_list args, int count);
+int print_char(va_list args, int count);
 int print_percent(void);
 int _switch(const char *, va_list, int);
 int print_int(va_list num, int count);

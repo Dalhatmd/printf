@@ -31,9 +31,9 @@ int _switch(const char *str, va_list args, int count)
 			break;
 		case 'd':
 		case 'i':
-			/* n = va_arg(args, int); */
-			count += print_digits(args);
-			/* count += _print_int(n); */
+			n = va_arg(args, int);
+			/* count += print_digits(args); */
+			count = print_int(n, count);
 			break;
 		case 'b':
 			num = va_arg(args, unsigned int);

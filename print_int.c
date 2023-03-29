@@ -9,19 +9,23 @@
  */
 int print_int(int n, int count)
 {
-	if (n < 0)
+	if (n <= INT_MAX && n >= INT_MIN)
 	{
-		_putchar('-');
+		if (n < 0)
+		{
+			_putchar('-');
+			count++;
+			n = -n;
+		}
+		if (n / 10)
+		{
+			count++;
+			print_int((n / 10), count);
+		}
+		_putchar((n % 10) + '0');
 		count++;
-		n = -n;
 	}
-	if (n / 10)
-	{
-		count++;
-		print_int((n / 10), count);
-	}
-	_putchar((n % 10) + '0');
-	count++;
-
+	else
+		return (-1);
 	return (count);
 }

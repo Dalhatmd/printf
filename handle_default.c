@@ -12,7 +12,7 @@ int handle_default(va_list args, int count)
 	char *s;
 
 	s = va_arg(args, char *);
-	if (*s != ' ' || *s != "\0")
+	if (*s != ' ' || *s != 0)
 	{
 		_putchar(*(s - 1));
 		_putchar(*s);

@@ -17,8 +17,8 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
+			count = _switch(format + 1, args, count);
 			format++;
-			count = _switch(format, args, count);
 		}
 		else
 		{

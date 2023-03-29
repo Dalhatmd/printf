@@ -39,15 +39,7 @@ int _switch(const char *str, va_list args, int count)
 			count += print_binary(num);
 			break;
 		default:
-			if (*str != ' ')
-			{
-				_putchar(*(str - 1));
-				count++;
-				_putchar(*str);
-				count++;
-			}
-			else
-				return (0);
+			count = handle_default(str, count);
 			break;
 	}
 

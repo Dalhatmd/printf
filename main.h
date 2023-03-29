@@ -14,6 +14,6 @@ int print_percent(void);
 int _switch(const char *, va_list, int);
 int print_int(va_list num, int count);
 int print_binary(unsigned int num);
-int handle_default(const char *s, int count);
+int handle_default(va_list args, int count);
 
 #endif /* MAIN_H */

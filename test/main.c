@@ -25,8 +25,8 @@ tch statement. Such type of statements is called nested switch case statements. 
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
-	_printf("Unknown:[%r]\n");
-	/* printf("Unknown:[%r]\n"); */
+	len = _printf("%");
+	_printf("\nOnly percent length:[%d]\n", len);
 
 	return (0);
 }

@@ -9,7 +9,6 @@
  */
 int handle_default(const char *s, int count)
 {
-	printf("S in handle default: %s\n", s);
 	if (*s != ' ')
 	{
 		if (*s != '\0')
@@ -23,5 +22,5 @@ int handle_default(const char *s, int count)
 			return (-1);
 	}
 	else
-		return(-1);
+		return (-1);
 }

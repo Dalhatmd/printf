@@ -2,13 +2,16 @@
 
 /**
  * print_int - Prints an integer of any size
- * @n: Integer to print
+ * @num: Integer to print
  * @count: counter to keep number of digits printed
  *
  * Return: count
  */
-int print_int(int n, int count)
+int print_int(va_list num, int count)
 {
+	int n = 0, i = 0, x = 0, tmp;
+
+	n = va_arg(num, int);
 	if (n <= INT_MAX && n >= INT_MIN)
 	{
 		if (n < 0)
@@ -17,13 +20,23 @@ int print_int(int n, int count)
 			count++;
 			n = -n;
 		}
-		if (n / 10)
+		tmp = n;
+		while (tmp / 10 > 0)
 		{
-			count++;
-			print_int((n / 10), count);
+			tmp /= 10;
+			i++;
 		}
-		_putchar((n % 10) + '0');
-		count++;
+		tmp = n;
+		while (i >= 0)
+		{
+			for (x = 0; x < i; x++)
+				tmp /= 10;
+			tmp %= 10;
+			_putchar(tmp + '0');
+			count++;
+			i--;
+			tmp = n;
+		}
 	}
 	else
 		return (-1);

@@ -20,8 +20,11 @@ int handle_default(const char *s)
 			return (count);
 		}
 		else
+		{
+			count = -1;
 			return (count);
+		}
 	}
-
+	count = -1;
 	return (count);
 }

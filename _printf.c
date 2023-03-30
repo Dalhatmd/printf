@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			len = _switch(format + 1, args);
-			if (len == 0)
+			if (len == -1)
 				return (-1);
 			count += len;
 			format++;

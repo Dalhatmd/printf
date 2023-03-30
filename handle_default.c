@@ -3,12 +3,13 @@
 /**
  * handle_default - Switch default function
  * @s: Pointer ot string
- * @count: counter
  *
  * Return: Count or -1 for error
  */
-int handle_default(const char *s, int count)
+int handle_default(const char *s)
 {
+	int count = 0;
+
 	if (*s != ' ')
 	{
 		if (*s != '\0')
@@ -19,8 +20,8 @@ int handle_default(const char *s, int count)
 			return (count);
 		}
 		else
-			return (-1);
+			return (count);
 	}
-	else
-		return (-1);
+
+	return (count);
 }

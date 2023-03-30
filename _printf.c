@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0;
+	int count = 0, len = 0;
 	va_list args;
 
 	if (format == NULL)
@@ -19,7 +19,10 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			count = _switch(format + 1, args, count);
+			len = _switch(format + 1, args);
+			if (len == 0)
+				return (-1);
+			count += len;
 			format++;
 		}
 		else
